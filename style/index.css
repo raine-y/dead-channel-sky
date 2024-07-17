@@ -5,12 +5,6 @@ body {
     background-position: center;
 }
 
-/* ~~~~~~~~~~~ */
-/* #init-popup */
-/* ~~~~~~~~~~~ */
-
-
-
 /* ~~~~~~~~~~~~~ */
 /* #core-content */
 /* ~~~~~~~~~~~~~ */
@@ -52,6 +46,9 @@ h1 {
     grid-column: 2;
     grid-row: 2;
     font-family: 'IBM Plex Mono Regular';
+    padding: 1.4rem;
+    background-color: rgba(21, 20, 29, 0.55);
+    color: aliceblue;
 }
 
 #introduction > h2 {
