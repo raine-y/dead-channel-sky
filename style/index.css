@@ -9,37 +9,63 @@ body {
 /* #core-content */
 /* ~~~~~~~~~~~~~ */
 
+#core-content {
+    height: 100vh;
+    overflow: hidden;
+}
+
 #core-wrapper {
     display: grid;
-    grid-template-columns:repeat(3, 1fr) ;
-    grid-template-rows:auto ;
-    height: fit-content;
+    grid-gap: .45rem;
+    grid-template-columns: 1.15fr 1.5fr .75fr ;
+    grid-template-rows:min-content ;
+    height: 100%;
+    overflow: hidden;
 }
 
 #header {
+    z-index: 5;
+    margin-top: .45rem;
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row: 1;
     text-align: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border:#dfdfdf solid 2px ;
+    background-color: rgba(21, 20, 29, 0.9);
+    color: white;
+    height: fit-content;
+    width: 98.5vw;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1 {
     font-family: Jacquard;
-    font-size: 4rem;
+    font-size: 3.25vw;
+    padding: 0;
+    margin: 0;
 }
 
-#nav {
-    display: flex;
-    flex-direction: row;
-}
 
 #popups-container {
     grid-column: 1;
-    grid-row: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
     display: flex;
     flex-direction: column;
+    background-image: url('../image/MOSHED-2024-7-17-11-13-59.jpg');
+    background-position: left;
+    border-right: solid #dfdfdf 2px;
+}
+
+#popup-ad-one {
+
+}
+
+#popup-ad-two {
+
 }
 
 #introduction {
@@ -47,18 +73,32 @@ h1 {
     grid-row: 2;
     font-family: 'IBM Plex Mono Regular';
     padding: 1.4rem;
-    background-color: rgba(21, 20, 29, 0.55);
+    background-color: rgba(21, 20, 29, 0.9);
     color: aliceblue;
+    border:#dfdfdf solid 2px ;
+    margin-bottom: .45rem;
+    overflow-y: scroll;
 }
 
 #introduction > h2 {
     font-family: 'VT232';
+    margin: 0;
+    border-bottom: 2px solid #dfdfdf;
+    padding-bottom: 1.4rem;
 }
 
-#todo-list {
+#link-list {
     grid-column: 3;
     grid-row: 2;
     font-family: 'IBM Plex Mono Regular';
+    display: flex;
+    flex-direction: column;
+}
+
+#link-list > img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 ol[title]::before {
@@ -68,9 +108,167 @@ ol[title]::before {
   }
 
 #buttons {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin-top: auto;
+    position: absolute;
+    right: .75rem;
+    bottom: .85rem;
+    z-index: 4;
+}
+
+#buttons > img {
+    padding-left: 2px;
+    padding-right: 2px;
+    height: 31px;
+    width: 81px;
+}
+
+#selfie {
+    position: absolute;
+    height: 330px;
+    width: auto;
+    right: .8rem;
+    bottom: .6rem;
+    transform: rotate(-3deg);
+    z-index: 3;
+}
+
+/* ~~~~~~~~~~~ */
+/* Fatal Popup */
+/* ~~~~~~~~~~~ */
+
+#popup-container{
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 6rem;
+    right: .9rem;
+    color: rgb(243, 243, 238);
+    overflow-y: hidden;
+    overflow-x: hidden;
+    border: solid 1.5px #9c9c9c; /* why does 1.5px actually show a difference and how is it half a pixel ..? */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.fatal-error {
+    cursor: wait;
+    background-color: #CBC8C1;
+    width: 340px;
+    height: 136px;
+    padding-top: 2px;
+    border-top:solid 3px  #F8FAED;
+    border-left: solid 3px #F8FAED;
+    border-bottom:solid 3px #5A5B56;
+    border-right:solid 3px #5A5B56;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#fatal-header {
+    cursor: default;
+    width: 336px;
+    height: 26px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: linear-gradient(to right, #5d5962 , #b4a6c2);
+    display: flex;
+    flex-direction:row ;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#fatal-title {
+    margin-left: 4px;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+#fatal-navbtn {
+    margin-right: 4px;
+    height: 18px;
+    width: 18px;
+    border-top:solid 1px  #F8FAED;
+    border-left: solid 1px #F8FAED;
+    border-bottom:solid 1px #5A5B56;
+    border-right:solid 1px #5A5B56;
+    background-color: #9c9c9c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: wait;
+}
+
+#fatal-navbtn > p {
+    padding-bottom: 1px;
+    font-size: 22px;
+    font-weight: 500;
+    color: #7C7B77;
+}
+
+#fatal-content {
+    color: #212119;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 99px;
+    box-sizing: border-box;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+#fatal-content-text {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#fatal-content-text > p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#fatal-contentbtn {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.button-container {
+    border: solid 1px #9c9c9c;
+    box-sizing: border-box;
+    padding-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.popup-button {
+    min-width: 130px;
+    border-radius: 0%;
+    margin-top: -5px;
+    padding-top: -5px;
+    border-top:solid 1.5px  #F8FAED;
+    border-left: solid 1.5px #F8FAED;
+    border-bottom:solid 1.5px #5A5B56;
+    border-right:solid 1.5px #5A5B56;
+    background-color: #CBC8C1;
+    cursor: wait;
+}
+
+.popup-button > p {
+    padding: 1px;
+    border: dotted 1.5px transparent;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    font-size: 16px;
+    color: #212119;
 }
 
 
