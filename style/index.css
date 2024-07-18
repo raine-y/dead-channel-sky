@@ -16,8 +16,7 @@ body {
 
 #core-wrapper {
     display: grid;
-    grid-gap: .45rem;
-    grid-template-columns: 1.15fr 1.5fr .75fr ;
+    grid-template-columns: 1.2fr 1.5fr .75fr ;
     grid-template-rows:min-content ;
     height: 100%;
     overflow: hidden;
@@ -55,7 +54,7 @@ h1 {
     grid-row-end: 3;
     display: flex;
     flex-direction: column;
-    background-image: url('../image/MOSHED-2024-7-17-11-13-59.jpg');
+    background-image: url('../image/MOSHED-2024-7-17-19-37-33.jpg');
     background-position: left;
     border-right: solid #dfdfdf 2px;
 }
@@ -69,6 +68,8 @@ h1 {
 }
 
 #introduction {
+    margin-top: .4rem;
+    margin-left: -2.1rem;
     grid-column: 2;
     grid-row: 2;
     font-family: 'IBM Plex Mono Regular';
@@ -93,6 +94,14 @@ h1 {
     font-family: 'IBM Plex Mono Regular';
     display: flex;
     flex-direction: column;
+    padding: 1.4rem;
+    background-color: rgba(21, 20, 29, 0.9);
+    color: aliceblue;
+    border:#dfdfdf solid 2px ;
+    height: fit-content;
+    margin-left: -2px;
+    margin-top: .7rem;
+    margin-right: .45rem;
 }
 
 #link-list > img {
@@ -127,7 +136,7 @@ ol[title]::before {
 
 #selfie {
     position: absolute;
-    height: 330px;
+    height: 310px;
     width: auto;
     right: .8rem;
     bottom: .6rem;
@@ -270,8 +279,3 @@ ol[title]::before {
     font-size: 16px;
     color: #212119;
 }
-
-
-/* ~~~~~~~~*/
-/* flasher */
-/* ~~~~~~~~*/
